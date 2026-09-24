@@ -1,3 +1,18 @@
+.admin-link { color: #ff2638 !important; font-weight: 800; }
+.admin-dialog { width: min(92vw, 520px); padding: 34px; color: var(--ink); background: #101a28; border: 1px solid rgba(255, 38, 56, .45); border-radius: 8px 28px 8px 28px; box-shadow: 0 25px 80px rgba(0, 0, 0, .55); direction: rtl; }
+.admin-dialog::backdrop { background: rgba(0, 0, 0, .72); backdrop-filter: blur(4px); }
+.admin-dialog h2 { margin: 12px 0 8px; font-size: 30px; }
+.admin-dialog p { color: #b8c4d1; line-height: 1.8; }
+.admin-close { position: absolute; top: 13px; left: 16px; border: 0; color: #b8c4d1; background: transparent; font-size: 27px; cursor: pointer; }
+.admin-login-form, .admin-work-form { display: grid; gap: 14px; margin-top: 24px; }
+.admin-dialog label { display: grid; gap: 7px; color: #dfe7ef; font-size: 13px; font-weight: 700; }
+.admin-dialog input, .admin-dialog textarea { width: 100%; padding: 12px 13px; color: var(--ink); background: #182638; border: 1px solid rgba(145, 171, 197, .28); border-radius: 4px; font: inherit; direction: ltr; }
+.admin-dialog textarea { direction: rtl; resize: vertical; }
+.admin-dialog input:focus, .admin-dialog textarea:focus { outline: 2px solid rgba(255, 38, 56, .45); border-color: #ff2638; }
+.admin-dialog .primary-button { border: 0; justify-content: center; cursor: pointer; font-family: inherit; }
+.admin-status { min-height: 24px; margin: 0 !important; color: #ff9da5 !important; font-size: 13px; }
+.dynamic-work figcaption small { display: block; margin-top: 7px; color: #aab9c9; font: 500 12px/1.7 "Cairo", sans-serif; direction: rtl; }
+@media (max-width: 780px) { .admin-dialog { padding: 28px 22px; } .admin-link { order: -1; } }
 :root {
   --ink: #f4f1f1;
   --muted: #a79a9d;

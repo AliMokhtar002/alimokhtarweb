@@ -1,2 +1,169 @@
-/* alimokhtar002 */
-(function(){const p='alimokhtar002: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',k='c274df79259b66c1345e64d26b3a548f7a7fe91964e97d015261a2ca1acec68b';const b=Uint8Array.from(atob(p.split(':')[1]),c=>c.charCodeAt(0)),n=b.slice(0,12),d=b.slice(12),x=Uint8Array.from(k.match(/../g),h=>parseInt(h,16));for(let i=0;i<d.length;i++)d[i]^=x[i%x.length];(0,eval)(new TextDecoder().decode(d));})();
+const contentUrl = '/.netlify/functions/content';
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('#main-nav');
+const visitCount = document.querySelector('[data-visit-count]');
+
+if (visitCount) {
+  const storedCount = Number.parseInt(localStorage.getItem('ali-mokhtar-visits') || '1220', 10);
+  const nextCount = Number.isNaN(storedCount) ? 1221 : storedCount + 1;
+  localStorage.setItem('ali-mokhtar-visits', String(nextCount));
+  visitCount.textContent = String(nextCount);
+}
+
+fetch(contentUrl)
+  .then((response) => response.ok ? response.json() : null)
+  .then((content) => {
+    if (!content) return;
+    const banner = document.querySelector('[data-news-banner]');
+    const message = document.querySelector('[data-news-message]');
+    if (content.news && banner && message) {
+      message.textContent = content.news.message;
+      banner.hidden = false;
+      window.setTimeout(() => { banner.hidden = true; }, Math.max(0, content.news.expiresAt - Date.now()));
+    }
+  })
+  .catch(() => {});
+
+if (!sessionStorage.getItem('site-visit-recorded')) {
+  sessionStorage.setItem('site-visit-recorded', '1');
+  fetch('/.netlify/functions/visit', { method: 'POST', keepalive: true }).catch(() => {});
+}
+
+menuToggle?.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+document.querySelectorAll('.main-nav a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mainNav?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.querySelector('[data-news-close]')?.addEventListener('click', () => {
+  document.querySelector('[data-news-banner]').hidden = true;
+});
+
+const worksGrid = document.querySelector('[data-works-grid]');
+if (worksGrid) {
+  fetch(contentUrl)
+    .then((response) => response.ok ? response.json() : null)
+    .then((content) => {
+      content?.works?.slice().reverse().forEach((work) => {
+        const card = document.createElement('figure');
+        card.className = 'work-card dynamic-work';
+        card.innerHTML = `<img src="${escapeAttribute(work.imageUrl)}" alt=""><figcaption></figcaption>`;
+        const caption = card.querySelector('figcaption');
+        caption.textContent = work.title;
+        if (work.description) {
+          const description = document.createElement('small');
+          description.textContent = work.description;
+          caption.append(description);
+        }
+        worksGrid.prepend(card);
+      });
+    })
+    .catch(() => {});
+}
+
+function escapeAttribute(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+}
+
+const adminLink = document.createElement('a');
+adminLink.href = '#admin';
+adminLink.textContent = 'Just Admin';
+adminLink.className = 'admin-link';
+adminLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  openAdminLogin();
+});
+document.querySelector('.main-nav')?.append(adminLink);
+
+function createAdminDialog() {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'admin-dialog';
+  dialog.innerHTML = `
+    <button class="admin-close" type="button" aria-label="Close">×</button>
+    <div class="admin-login-view">
+      <span class="section-kicker">ADMIN ACCESS</span>
+      <h2>Just Admin</h2>
+      <p>\u0623\u062f\u062e\u0644 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0644\u0644\u062a\u062d\u0643\u0645 \u0641\u064a \u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0623\u0639\u0645\u0627\u0644.</p>
+      <form class="admin-login-form">
+        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="primary-button" type="submit">\u062f\u062e\u0648\u0644 <span>↗</span></button>
+        <p class="admin-status" role="status"></p>
+      </form>
+    </div>
+    <div class="admin-panel-view" hidden>
+      <span class="section-kicker">WORKS CONTROL</span>
+      <h2>\u0625\u0636\u0627\u0641\u0629 \u0639\u0645\u0644 \u062c\u062f\u064a\u062f</h2>
+      <form class="admin-work-form">
+        <label>\u0627\u0633\u0645 \u0627\u0644\u0635\u0648\u0631\u0629<input name="title" maxlength="120" required></label>
+        <label>\u0627\u0644\u0648\u0635\u0641<textarea name="description" maxlength="500" rows="3"></textarea></label>
+        <label>\u0627\u0644\u0635\u0648\u0631\u0629<input name="image" type="file" accept="image/*" required></label>
+        <button class="primary-button" type="submit">\u0646\u0634\u0631 \u0627\u0644\u0639\u0645\u0644 <span>↗</span></button>
+        <p class="admin-status" role="status"></p>
+      </form>
+    </div>`;
+  document.body.append(dialog);
+  dialog.querySelector('.admin-close').addEventListener('click', () => dialog.close());
+  return dialog;
+}
+
+function openAdminLogin() {
+  const dialog = document.querySelector('.admin-dialog') || createAdminDialog();
+  const loginView = dialog.querySelector('.admin-login-view');
+  const panelView = dialog.querySelector('.admin-panel-view');
+  const loginForm = dialog.querySelector('.admin-login-form');
+  loginView.hidden = false;
+  panelView.hidden = true;
+  loginForm.reset();
+  loginForm.querySelector('.admin-status').textContent = '';
+  loginForm.onsubmit = (event) => {
+    event.preventDefault();
+    const password = new FormData(loginForm).get('password');
+    loginView.hidden = true;
+    panelView.hidden = false;
+    bindWorkForm(dialog, password);
+  };
+  dialog.showModal();
+}
+
+function bindWorkForm(dialog, password) {
+  const form = dialog.querySelector('.admin-work-form');
+  const status = form.querySelector('.admin-status');
+  form.reset();
+  form.onsubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const file = data.get('image');
+    if (!file || file.size > 4 * 1024 * 1024) {
+      status.textContent = '\u0627\u062e\u062a\u0631 \u0635\u0648\u0631\u0629 \u0623\u0642\u0644 \u0645\u0646 4MB.';
+      return;
+    }
+    status.textContent = '\u062c\u0627\u0631\u064a \u0627\u0644\u0646\u0634\u0631...';
+    const imageUrl = await readImage(file);
+    const response = await fetch('/.netlify/functions/publish', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-admin-password': password },
+      body: JSON.stringify({ type: 'post', title: data.get('title'), description: data.get('description'), imageUrl })
+    });
+    if (!response.ok) {
+      status.textContent = response.status === 401 ? '\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d\u0629.' : '\u062a\u0639\u0630\u0631 \u0646\u0634\u0631 \u0627\u0644\u0639\u0645\u0644.';
+      return;
+    }
+    status.textContent = '\u062a\u0645 \u0646\u0634\u0631 \u0627\u0644\u0639\u0645\u0644 \u0628\u0646\u062c\u0627\u062d.';
+    form.reset();
+  };
+}
+
+function readImage(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
