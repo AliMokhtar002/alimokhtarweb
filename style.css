@@ -170,3 +170,166 @@ h1 strong, .about h2 em, .contact h2 em, .projects-heading h2 em { color: #ff263
 @media (max-width: 780px) { .skills-chart { gap: 18px; min-height: 275px; padding: 22px 20px 20px; }.chart-column { width: 64px; height: 220px; }.chart-track { height: 165px; }.skills-chart::before { left: 20px; right: 20px; bottom: 69px; } }
 .skills-chart { background: linear-gradient(135deg, rgba(31, 20, 63, .96), rgba(55, 27, 74, .92)); border-color: rgba(150, 100, 255, .3); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05), 0 18px 35px rgba(8, 4, 20, .2); }.chart-track span { background: linear-gradient(180deg, #bd6ee8, #7550d8); box-shadow: 0 8px 18px rgba(154, 91, 226, .27); }.work-together-text { display: block; color: #d7b7ff; font: 700 20px "Sora", sans-serif; direction: ltr; text-align: right; }
 .page-shell { background: radial-gradient(circle at 80% 4%, rgba(45, 109, 166, .2), transparent 29%), radial-gradient(circle at 5% 82%, rgba(48, 129, 154, .1), transparent 24%), #0b1422; }.page-shell::before { opacity: .48; background-image: linear-gradient(114deg, transparent 0 49.3%, rgba(91, 171, 211, .14) 49.7%, transparent 50.1%), linear-gradient(28deg, transparent 0 49.4%, rgba(91, 171, 211, .1) 49.8%, transparent 50.2%), linear-gradient(90deg, transparent 0 49.7%, rgba(196, 213, 224, .06) 50%, transparent 50.3%); }.brand-mark { box-shadow: 7px 7px 0 rgba(62, 139, 190, .18); }.main-nav { color: #aab9c9; }.detail-card, .work-card, .contact-option { background: rgba(19, 34, 52, .88); }.detail-card:hover, .contact-option:hover, .work-card:hover { background: rgba(26, 47, 70, .96); }.location-chip, .floating-note { background: rgba(17, 31, 48, .94); }.identity-card { background: linear-gradient(145deg, #246a9f 0%, #173f68 60%, #102a48 100%); box-shadow: 27px 30px 0 rgba(41, 105, 151, .1), 0 28px 55px rgba(5, 15, 27, .35); }.skills-chart { background: linear-gradient(135deg, rgba(20, 42, 65, .98), rgba(27, 53, 79, .94)); border-color: rgba(91, 171, 211, .28); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05), 0 18px 35px rgba(5, 15, 27, .25); }.chart-track span { background: linear-gradient(180deg, #5eb5dc, #276b9f); box-shadow: 0 8px 18px rgba(45, 125, 174, .25); }.work-together-text { color: #9ed2e8; }.contact-link, .back-home { color: var(--blue); }.main-nav, .main-nav.open { background: rgba(12, 25, 40, .98); }.work-card figcaption { color: var(--ink); }
+
+.contact {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 420px);
+  align-items: center;
+  gap: clamp(36px, 7vw, 110px);
+  padding: clamp(60px, 7vw, 120px) 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(8, 5, 7, 0.72), rgba(10, 6, 8, 0.9));
+  border-top: 1px solid rgba(255, 65, 82, 0.28);
+}
+
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, transparent 0 59%, rgba(255, 38, 56, 0.08) 59% 60%, transparent 60% 100%),
+    linear-gradient(135deg, transparent 0 51%, rgba(255, 38, 56, 0.09) 51% 52%, transparent 52% 100%);
+  pointer-events: none;
+}
+
+.contact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: clamp(120px, 18vw, 220px);
+  height: 2px;
+  background: #ff2638;
+  box-shadow: 0 0 16px rgba(255, 38, 56, 0.7);
+}
+
+.contact-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  direction: rtl;
+}
+
+.contact-heading .section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: #ff2d42;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.contact-heading .section-kicker::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: #ff2d42;
+  border-radius: 999px;
+}
+
+.contact-heading h2 {
+  margin: 0;
+  color: #ff3d4e;
+  font-size: clamp(42px, 5vw, 86px);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+.contact-heading p {
+  max-width: 560px !important;
+  margin: 20px 0 0;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: clamp(15px, 1.35vw, 20px);
+  line-height: 1.9;
+  direction: rtl;
+}
+
+.contact-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 420px;
+  min-width: 0 !important;
+  padding: 0 0 0 18px;
+  border-left: 2px solid rgba(255, 60, 72, 0.8);
+}
+
+.work-together-text {
+  margin: 0 0 8px;
+  color: #ff7d89 !important;
+  font: 800 clamp(22px, 2.4vw, 38px) "Sora", sans-serif;
+  letter-spacing: -0.04em;
+  direction: ltr;
+  text-align: left;
+}
+
+.contact-actions .contact-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: fit-content;
+  max-width: 260px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid rgba(255, 60, 72, 0.9);
+  color: #ff3d4e !important;
+  font-size: clamp(18px, 1.6vw, 24px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.contact-actions .contact-link b {
+  color: #ff7d89 !important;
+  font-size: 1.2em;
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+
+.contact-actions .contact-link:hover b {
+  transform: translate(-4px, -2px);
+}
+
+@media (max-width: 780px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 58px 0 68px;
+  }
+
+  .contact-heading h2 {
+    font-size: clamp(38px, 11vw, 54px);
+    line-height: 0.95;
+  }
+
+  .contact-heading p {
+    max-width: 100% !important;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .contact-actions {
+    max-width: 100%;
+    padding-left: 12px;
+    border-left-width: 1px;
+  }
+
+  .work-together-text {
+    font-size: 22px !important;
+  }
+
+  .contact-actions .contact-link {
+    max-width: 220px;
+    font-size: 18px;
+  }
+}

@@ -89,10 +89,10 @@ function createAdminDialog() {
     <div class="admin-login-view">
       <span class="section-kicker">ADMIN ACCESS</span>
       <h2>Just Admin</h2>
-      <p>\u0623\u062f\u062e\u0644 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0644\u0644\u062a\u062d\u0643\u0645 \u0641\u064a \u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0623\u0639\u0645\u0627\u0644.</p>
+      <p>إدارة الأعمال المنشورة وإضافة مشروع جديد.</p>
       <form class="admin-login-form">
-        <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
-        <button class="primary-button" type="submit">\u062f\u062e\u0648\u0644 <span>↗</span></button>
+        <label>كلمة المرور<input name="password" type="password" autocomplete="current-password" required></label>
+        <button class="primary-button" type="submit">دخول <span>↗</span></button>
         <p class="admin-status" role="status"></p>
       </form>
     </div>
@@ -124,9 +124,9 @@ function openAdminLogin() {
   loginForm.onsubmit = (event) => {
     event.preventDefault();
     const password = new FormData(loginForm).get('password');
+    bindWorkForm(dialog, password);
     loginView.hidden = true;
     panelView.hidden = false;
-    bindWorkForm(dialog, password);
   };
   dialog.showModal();
 }
@@ -134,35 +134,60 @@ function openAdminLogin() {
 function bindWorkForm(dialog, password) {
   const form = dialog.querySelector('.admin-work-form');
   const status = form.querySelector('.admin-status');
+  const loginView = dialog.querySelector('.admin-login-view');
+  const panelView = dialog.querySelector('.admin-panel-view');
+  const loginForm = dialog.querySelector('.admin-login-form');
   form.reset();
   form.onsubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(form);
     const file = data.get('image');
-    if (!file || file.size > 4 * 1024 * 1024) {
-      status.textContent = '\u0627\u062e\u062a\u0631 \u0635\u0648\u0631\u0629 \u0623\u0642\u0644 \u0645\u0646 4MB.';
+    if (!file || !file.type.startsWith('image/') || file.size > 3 * 1024 * 1024) {
+      status.textContent = 'اختر صورة صحيحة أقل من 3MB.';
       return;
     }
-    status.textContent = '\u062c\u0627\u0631\u064a \u0627\u0644\u0646\u0634\u0631...';
-    const imageUrl = await readImage(file);
-    const response = await fetch('/.netlify/functions/publish', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-admin-password': password },
-      body: JSON.stringify({ type: 'post', title: data.get('title'), description: data.get('description'), imageUrl })
-    });
-    if (!response.ok) {
-      status.textContent = response.status === 401 ? '\u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d\u0629.' : '\u062a\u0639\u0630\u0631 \u0646\u0634\u0631 \u0627\u0644\u0639\u0645\u0644.';
-      return;
+    status.textContent = 'جاري النشر...';
+    try {
+      const imageUrl = await prepareImage(file);
+      const response = await fetch('/.netlify/functions/publish', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', 'x-admin-password': password },
+        body: JSON.stringify({ type: 'post', title: data.get('title'), description: data.get('description'), imageUrl })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        status.textContent = result.error || `تعذر نشر العمل (${response.status}).`;
+        if (response.status === 401) {
+          panelView.hidden = true;
+          loginView.hidden = false;
+          loginForm.querySelector('input').focus();
+        }
+        return;
+      }
+      status.textContent = 'تم نشر العمل بنجاح.';
+      form.reset();
+    } catch (error) {
+      status.textContent = 'تعذر الاتصال بخدمة النشر. تحقق من اتصالك وحاول مرة أخرى.';
     }
-    status.textContent = '\u062a\u0645 \u0646\u0634\u0631 \u0627\u0644\u0639\u0645\u0644 \u0628\u0646\u062c\u0627\u062d.';
-    form.reset();
   };
 }
 
-function readImage(file) {
+function prepareImage(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
+    reader.onload = () => {
+      const image = new Image();
+      image.onload = () => {
+        const scale = Math.min(1, 1600 / Math.max(image.width, image.height));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(image.width * scale));
+        canvas.height = Math.max(1, Math.round(image.height * scale));
+        canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', 0.82));
+      };
+      image.onerror = reject;
+      image.src = reader.result;
+    };
     reader.onerror = reject;
     reader.readAsDataURL(file);
   });
