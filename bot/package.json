@@ -1,0 +1,7 @@
+{
+  "name": "site-discord-bot",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node --env-file=.env index.mjs" },
+  "dependencies": { "discord.js": "^14.16.3" }
+}
